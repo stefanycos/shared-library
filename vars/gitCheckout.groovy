@@ -2,8 +2,8 @@
 
 import br.com.demo.Checkout
 
-def call() {
-	
+def call(Map params) {
+
 	def checkout = new Checkout()
 	checkout.execute(params.branch, params.url)
 	

@@ -2,7 +2,7 @@
 
 import br.com.demo.Build
 
-def call(Map params) {
+def call() {
 	
 	def build = new Build()
 	build.execute()
