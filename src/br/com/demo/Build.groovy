@@ -3,9 +3,11 @@
 package br.com.demo
 
 def void execute() {
-	stage {
-		tool name: 'Maven-3.5.0', type: 'maven'
-		sh "mvn -DskipTests -U clean package"	
-	}
-	
+	script {
+        shortCommit = sh (
+            script:  "mvn -DskipTests -U clean package",
+            returnStdout: true
+        ).trim()
+        return shortCommit
+    }
 }
