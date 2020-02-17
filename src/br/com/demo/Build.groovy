@@ -4,10 +4,10 @@ package br.com.demo
 
 def void execute() {
 	script {
-        shortCommit = sh (
+        mvnPackage = bat (
             script:  "mvn -DskipTests -U clean package",
             returnStdout: true
         ).trim()
-        return shortCommit
+        return mvnPackage
     }
 }
