@@ -6,10 +6,10 @@ class Checkout {
 	private String _credentialId
 	private String _branchName
 
-	Checkout (Map params) {
-		_url = params.url
-		_credentialId = params.credentialId
-		_branchName = params.branchName
+	Checkout (String url, String credentialId, String branchName) {
+		_url = url
+		_credentialId = credentialId
+		_branchName = branchName
 	}
 
 	void execute() {
