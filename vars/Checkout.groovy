@@ -1,8 +1,10 @@
 #!groovy
 
-def call(body) {
+def call(Map params) {
 
-	def git = new br.com.demo.Git()
-	git.checkout(body.branch, body.url)
-	
+	 checkout([
+        $class: 'GitSCM',
+        branches: [[name:  params.branch ]],
+        userRemoteConfigs: [[ url: params.url ]]
+    ])
 }
