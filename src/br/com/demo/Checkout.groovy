@@ -6,7 +6,7 @@ class Checkout {
 	private String _credentialId
 	private String _branchName
 
-	Checkout (String url, String credentialId, String branchName) {
+	Checkout (url, credentialId, branchName) {
 		_url = url
 		_credentialId = credentialId
 		_branchName = branchName
