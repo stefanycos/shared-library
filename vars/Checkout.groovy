@@ -1,10 +1,10 @@
 #!groovy
 
-def call(Map params) {
-
-	 checkout([
+def call(Map stageParams) {
+ 
+    checkout([
         $class: 'GitSCM',
-        branches: [[name:  params.branch ]],
-        userRemoteConfigs: [[ url: params.url ]]
+        branches: [[name:  stageParams.branch ]],
+        userRemoteConfigs: [[ url: stageParams.url ]]
     ])
-}
+  }
