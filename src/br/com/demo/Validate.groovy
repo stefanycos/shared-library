@@ -16,7 +16,7 @@ def void execute () {
 	response_json = readJSON text: "${response.content}"
 	echo "Application Status: ${response_json}" 
 	
-	if(response_json.contains('running')) {
+	if(response_json.status == 'running') {
 		 currentBuild.result = 'SUCCESS'
     	 return
 	}
