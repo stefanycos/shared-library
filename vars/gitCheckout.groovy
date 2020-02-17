@@ -1,8 +1,10 @@
 #!groovy
 
+import br.com.demo.Checkout
+
 def call(Map params) {
 
-	def git = new br.com.demo.Git()
-	git.checkout(params.branch, params.url)
+	def checkout = new Checkout()
+	checkout.execute(params.branch, params.url)
 	
 }

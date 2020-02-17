@@ -2,21 +2,11 @@
 
 package br.com.demo
 
-def void checkout(branch, url) {
-
-   checkout([
+def void execute(branch, url, credentials) {
+	
+	checkout([
         $class: 'GitSCM',
         branches: [[name:  branch ]],
         userRemoteConfigs: [[ url: url ]]
     ])
-
 }
-
-def void build() {
-	
-	sh "mvn -DskipTests -U clean package"
-
-}
-
-
-return this
