@@ -4,7 +4,7 @@ package br.com.demo
 
 def void execute () {
 	response = httpRequest ( 
-				contentType: APPLICATION_JSON,
+				contentType: 'APPLICATION_JSON',
 				consoleLogResponseBody: false,
 				httpMode: 'GET', 
 				ignoreSslErrors: true, 
