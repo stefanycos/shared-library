@@ -2,7 +2,7 @@
 
 package br.com.demo
 
-def void execute(branch, url, credentials) {
+def void execute(branch, url) {
 	
 	checkout([
         $class: 'GitSCM',
