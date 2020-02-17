@@ -12,7 +12,6 @@ def void checkout(branch, url) {
 
 }
 
-
 def void build() {
 	
 	sh "mvn -DskipTests -U clean package"

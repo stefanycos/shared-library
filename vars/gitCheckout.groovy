@@ -1,10 +1,8 @@
 #!groovy
 
-def call(Map stageParams) {
- 
-    checkout([
-        $class: 'GitSCM',
-        branches: [[name:  stageParams.branch ]],
-        userRemoteConfigs: [[ url: stageParams.url ]]
-    ])
-  }
+def call(Map params) {
+
+	def git = new br.com.demo.Git()
+	git.checkout(params.branch, params.url)
+	
+}
