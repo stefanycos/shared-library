@@ -3,12 +3,7 @@
 package br.com.demo
 
 def void execute() {
-	echo 'Starting BUILD'
-	script {
-        mvnPackage = bat (
-            script:  "mvn -DskipTests -U clean package",
-            returnStdout: true
-        ).trim()
-        return mvnPackage
-    }
+	echo 'Starting BUILD Test'
+	tool name: 'Maven-3.6.1', type: 'maven'
+    bat "mvn -DskipTests -U clean package"
 }
