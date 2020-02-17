@@ -1,6 +1,5 @@
 package br.com.demo
-import org.dcube.IStepExecutor
-import org.dcube.ioc.ContextRegistry
+
 
 class HelloWorld implements Serializable {
     private String _solutionPath
@@ -10,12 +9,6 @@ class HelloWorld implements Serializable {
     }
 
     void build() {
-        IStepExecutor steps = ContextRegistry.getContext().getStepExecutor()
-
-//        int returnStatus = steps.sh("echo \"building ${this._solutionPath}...\"")
-        int returnStatus = steps.sh("${this._solutionPath}")
-        if (returnStatus != 0) {
-            steps.error("Unable To Execute The Command")
-        }
+        echo "Building.... $_solutionPath"
     }
 }
