@@ -1,7 +1,7 @@
 import br.com.demo.HelloWorld
 
-def call(String solutionPath) {
+def call(Map params) {
 
-    def helloworld = new HelloWorld(solutionPath)
+    def helloworld = new HelloWorld(params.solutionPath)
     helloworld.build()
 }
