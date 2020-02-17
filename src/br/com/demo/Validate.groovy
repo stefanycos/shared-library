@@ -16,11 +16,11 @@ def void execute () {
 	response_json = readJSON text: "${response.content}"
 	echo "Application Status: ${response_json}" 
 	
-	if( response_json != 'RUNNING' )) {
-		 currentBuild.result = 'FAILURE'
+	if(response_json.contains('RUNNING')) {
+		 currentBuild.result = 'SUCCESS'
     	 return
-	} else {
-		currentBuild.result = 'SUCCESS'
-    	return
 	}
+
+	currentBuild.result = 'FAILURE'
+    return
 }
