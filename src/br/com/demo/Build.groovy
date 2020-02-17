@@ -3,5 +3,9 @@
 package br.com.demo
 
 def void execute() {
-	sh "mvn -DskipTests -U clean package"
+	stage {
+		tool name: 'Maven-3.5.0', type: 'maven'
+		sh "mvn -DskipTests -U clean package"	
+	}
+	
 }
