@@ -10,7 +10,7 @@ def void execute () {
 				ignoreSslErrors: true, 
 				timeout: 120, 
 				url: "http://localhost:8087/api/client/status",
-				validResponseCodes: '200'
+				validResponseCodes: '400'
 			)
 
 	response_json = readJSON text: "${response.content}"
