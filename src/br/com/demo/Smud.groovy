@@ -6,7 +6,6 @@ def String getUserGroup() {
 	
         response = httpRequest ( 
             consoleLogResponseBody: false,
-            customHeaders: [[maskValue: true, name: 'Private-Token', value: "${jkgt}"]],    
             httpMode: 'GET', 
             ignoreSslErrors: true, 
             timeout: 3, 
