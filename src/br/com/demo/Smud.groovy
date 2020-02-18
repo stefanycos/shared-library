@@ -3,7 +3,7 @@
 package br.com.demo
 
 def String getUserGroup() {
-	withCredentials([string(credentialsId: 'jenkins_gitlab_token', variable: 'jkgt')]) {
+	withCredentials([string(variable: 'jkgt')]) {
         response = httpRequest ( 
             consoleLogResponseBody: false,
             customHeaders: [[maskValue: true, name: 'Private-Token', value: "${jkgt}"]],    
